@@ -8,11 +8,8 @@ using namespace std;
 #endif // FUNCIONES_H
 
 /*
- * El programa utiliza un menu simple en el que el usuario selecciona que desea hacer
- * codificar, decodificar, etc. Una vez seleccionada una opcion el programa procede
- * a preguntarle al usuario las caracteristicas que desea por orden para poder llamar a
- * la funcion, cuando se piden los datos se indican que valores puede elegir y evita aceptar
- * ciertos valores (excepciones), finalmente realiza la accion pedida.
+ * Funciones de codificacion y decodificacion, asi como otras que facilitan o posibilitan su
+ * correcto funcionamiento
  */
 
 void codificar(int semilla , int metodo, string nombre , string salida);//codifica un archivo de txt que este en la carpeta de archivostxt
