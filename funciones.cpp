@@ -353,7 +353,7 @@ void decodificar (int semilla , int met, string nom , string sali)
     }
 }
 
-void lect_print(string nombre)//lee e imprime todo lo que hay en un txt
+void lect_print(string nombre)
 {
     ifstream archivo;
     string texto;
@@ -372,7 +372,7 @@ void lect_print(string nombre)//lee e imprime todo lo que hay en un txt
     archivo.close();
 }
 
-void save(string nombre, string texto, int metodo, int semilla) //guarda la codificacion en un archivo
+void save(string nombre, string texto, int metodo, int semilla)
 {
     ofstream escritura;
     string met=to_string(metodo), semi=to_string(semilla);
@@ -382,7 +382,7 @@ void save(string nombre, string texto, int metodo, int semilla) //guarda la codi
     escritura.close();
 }
 
-void saveDeco(string nombre, string texto) //guarda la codificacion en un archivo
+void saveDeco(string nombre, string texto)
 {
     ofstream escritura;
     string nombre_completo=nombre+"(decodificado)"+".txt";
@@ -391,7 +391,7 @@ void saveDeco(string nombre, string texto) //guarda la codificacion en un archiv
     escritura.close();
 }
 
-string binario(int digi)//pasa un numero a binario
+string binario(int digi)
 {
     string binario, caracter,binar;
     for (int i=0;i<8;i++)
@@ -408,7 +408,7 @@ string binario(int digi)//pasa un numero a binario
     return binar;
 }
 
-string texto_bin(string nombre) //pasa el .txt a binario
+string texto_bin(string nombre)
 {
     ifstream archivo;
     string texto,caracter,bin;
@@ -434,7 +434,7 @@ string texto_bin(string nombre) //pasa el .txt a binario
     return texto;
 }
 
-string texto_deco(string binario) //pasa el texto de binario a lenguaje legible
+string texto_deco(string binario)
 {
     int posi=0,len=binario.length();
     string textofin, texto, letra,texto2;
@@ -472,7 +472,7 @@ string texto_deco(string binario) //pasa el texto de binario a lenguaje legible
     return textofin;
 }
 
-string lect_copy(string nombre) //copia todo el texto codificado a un string para poder decodificarlo despues
+string lect_copy(string nombre)
 {
     ifstream archivo;
     string texto, textofin;

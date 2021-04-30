@@ -15,8 +15,8 @@ int main()
         {
             cout<<"1 - Codificar un texto"<<endl;
             cout<<"2 - Decodificar un texto"<<endl;
-            cout<<"3 - Sistema de cajero"<<endl;
-            cout<<"4 - Salir del programa"<<endl<<endl;
+            cout<<"3 - Sistema de cajero (Sin hacer)"<<endl;
+            cout<<"4 - Salir del programa (Sin hacer)"<<endl<<endl;
             cout<<"Ingrese la opcion deseada: ";cin>>opcion;
             while (opcion<1 or opcion>4)
             {
@@ -37,10 +37,10 @@ int main()
                 int semi, met;
                 cout<<"Bienvenido al sistema de codificacion de texto"<<endl;
                 cout<<"Digite el nombre de su archivo(sin extension): ";cin>>nombre;
-                nombre+=".txt";
+                nombre+=".txt";//Se le agrega la extension
                 cout<<"----------------------------------------------------------"<<endl;
                 cout<<"Esto fue lo que se encontro en el archivo: "<<endl<<endl;
-                lect_print(nombre);
+                lect_print(nombre);//se imprime el contenido del txt
                 cout<<"----------------------------------------------------------"<<endl;
                 cout<<"Ingrese que semilla desea usar para la codificacion(entre 2 y 8): ";cin>>semi;
                 while (semi<2 or semi>8)
@@ -56,7 +56,7 @@ int main()
                 cout<<endl;
                 cout<<"NOTA:Al nombre se le agregara el metodo y la semilla usadas por si se desea hacer una decodificacion."<<endl<<endl;
                 cout<<"Ingrese el nombre del archivo en el que desea guardarlo(sin extension): ";cin>>guardar;
-                codificar(semi,met,nombre,guardar);
+                codificar(semi,met,nombre,guardar);//se llama a la funcion que codifica con los datos recibidos
                 cout<<"----------------------------------------------------------"<<endl;
                 cout<<"Su texto fue codificado con el metodo "<<met<<" y la semilla "<<semi<<"."<<endl<<endl;
                 cout<<endl<<endl;
@@ -90,7 +90,7 @@ int main()
                 int semi, met;
                 cout<<"Bienvenido al sistema de decodificacion de texto"<<endl;
                 cout<<"Digite el nombre de el archivo(sin extension) que desea decodificar: ";cin>>nombre;
-                nombre+=".txt";
+                nombre+=".txt";//Se le agrega la extension
                 cout<<"Digite en que semilla se codifico originalmente el texto: ";cin>>semi;
                 while (semi<2 or semi>8)
                 {
@@ -103,7 +103,7 @@ int main()
                 }
                 cout<<endl;
                 cout<<"Ingrese el nombre del archivo en el que desea guardarlo(sin extension): ";cin>>guardar;
-                decodificar(semi,met,nombre,guardar);
+                decodificar(semi,met,nombre,guardar);//se llama a la funcion que decodifica con los datos recibidos
                 cout<<"----------------------------------------------------------"<<endl;
                 cout<<"Su texto fue decodificado."<<endl<<endl;
                 cout<<endl<<endl;
