@@ -4,6 +4,15 @@
 
 using namespace std;
 
+
+/*
+ * El programa utiliza un menu simple en el que el usuario selecciona que desea hacer
+ * codificar, decodificar, etc. Una vez seleccionada una opcion el programa procede
+ * a preguntarle al usuario las caracteristicas que desea por orden para poder llamar a
+ * la funcion, cuando se piden los datos se indican que valores puede elegir y evita aceptar
+ * ciertos valores (excepciones), finalmente realiza la accion pedida.
+ */
+
 int main()
 {
         int opcion;
@@ -42,10 +51,10 @@ int main()
                 cout<<"Esto fue lo que se encontro en el archivo: "<<endl<<endl;
                 lect_print(nombre);//se imprime el contenido del txt
                 cout<<"----------------------------------------------------------"<<endl;
-                cout<<"Ingrese que semilla desea usar para la codificacion(entre 2 y 8): ";cin>>semi;
-                while (semi<2 or semi>8)
+                cout<<"Ingrese que semilla desea usar para la codificacion(entre 2 y 20): ";cin>>semi;
+                while (semi<2 or semi>20)
                 {
-                    cout<<"Ingrese que semilla desea usar para la codificacion(entre 1 y 8): ";cin>>semi;
+                    cout<<"Ingrese que semilla desea usar para la codificacion(entre 1 y 20): ";cin>>semi;
                 }
                 cout<<endl;
                 cout<<"Ingrese el metodo que desea usar para codificar (1 o 2): ";cin>>met;
@@ -92,7 +101,7 @@ int main()
                 cout<<"Digite el nombre de el archivo(sin extension) que desea decodificar: ";cin>>nombre;
                 nombre+=".txt";//Se le agrega la extension
                 cout<<"Digite en que semilla se codifico originalmente el texto: ";cin>>semi;
-                while (semi<2 or semi>8)
+                while (semi<2 or semi>20)
                 {
                     cout<<"Digite en que semilla se codifico originalmente el texto: ";cin>>semi;
                 }
