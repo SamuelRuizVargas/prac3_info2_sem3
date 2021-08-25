@@ -21,6 +21,7 @@ int main()
 {
         int opcion;
         cout << "Practica 3 - Samuel Ruiz Vargas - CC: 1000898936"<<endl<<endl;
+        cout << "NOTA(S): algunos datos necesarios para las pruebas estan en forma de comentarios en el codigo"<<endl<<"El programa esta pensado para la terminal de windows"<<endl<<endl;
 
         bool terminar=false;
         int term;
@@ -253,7 +254,7 @@ int main()
                     }
 
                     usuarios creado = usuarios(cc,clave,saldo);
-                    crear_usu(creado.getCC(),creado.getClave(),creado.getSaldo());
+                    crear_usu(creado.getCC(),creado.getClave(),creado.getSaldo());//se guarda el usuario en el archivo txt con los datos del objeto
                     cout<<"Usuario creado, ingrese 1 para terminar o 2 para seguir usando el programa: ";cin>>term;
                     while (term<1 or term>2)
                     {
@@ -348,7 +349,8 @@ int main()
                     int eleccion;
                     cout<<"Inicio sesion correctamente!"<<endl;
                     float saldo=saldo_user(doc,contra_string);
-                    if (saldo<=1000)
+                    usuarios usu_actu = usuarios(doc,contra_string,saldo);
+                    if (saldo<=1000) //no se le permite al usuarios realizar acciones
                     {
                         cout<<endl;
                         cout<<"Actualmente su saldo es menor o igual a 1000 pesos, por lo tanto no puede realizar acciones hasta que no agregue mas dinero a la cuenta. "<<endl;
@@ -397,11 +399,7 @@ int main()
                             {
                                 cout<<endl;
                             }
-                            float saldo_copy;
-                            saldo_copy=saldo-1000;
-                            cout<<"Actualmente su saldo es: "<<saldo_copy<<endl;
-                            cout<<"Tenga en cuenta que al saldo mostrado ya se le han quitado los 1000 pesos"<<endl<<endl;
-                            actualizar_saldo(doc,contra_string,saldo_copy);
+                            usu_actu.consul_saldo();
                             cout<<"Accion terminada, ingrese 1 para terminar o 2 para seguir usando el programa: ";cin>>term;
                             while (term<1 or term>2)
                             {
@@ -428,29 +426,7 @@ int main()
                             {
                                 cout<<endl;
                             }
-                            float sacar, saldo_copy=saldo;
-                            cout<<"Actualmente su saldo es: "<<saldo<<endl;
-                            cout<<"Ingrese cuanto desea retirar: ";cin>>sacar;
-                            while(sacar<=0)
-                            {
-                                cout<<"Se debe sacar una cantidad mayor a 0"<<endl;
-                                cout<<"Ingrese cuanto desea retirar: ";cin>>sacar;
-                            }
-                            sacar+=1000;
-                            saldo_copy-=sacar;
-                            while (saldo_copy<0)
-                            {
-                                cout<<endl;
-                                cout<<"No es posible sacar esa cantidad con su saldo actual, recuerde que la transaccion cuesta 1000 pesos."<<endl;
-                                cout<<"Actualmente su saldo es: "<<saldo<<endl;
-                                cout<<"Ingrese cuanto desea retirar: ";cin>>sacar;
-                                saldo_copy=saldo;
-                                sacar+=1000;
-                                saldo_copy-=sacar;
-                            }
-                            cout<<endl;
-                            cout<<"Su nuevo saldo es: "<<saldo_copy<<endl;
-                            actualizar_saldo(doc,contra_string,saldo_copy);
+                            usu_actu.reti_saldo();
                             cout<<"Accion terminada, ingrese 1 para terminar o 2 para seguir usando el programa: ";cin>>term;
                             while (term<1 or term>2)
                             {
