@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "funciones.h"
+#include "usuarios.h"
 
 using namespace std;
 
@@ -251,8 +252,8 @@ int main()
                         cout<<"Ingrese el saldo del usuario: ";cin>>saldo;
                     }
 
-
-                    crear_usu(cc,clave,saldo);
+                    usuarios creado = usuarios(cc,clave,saldo);
+                    crear_usu(creado.getCC(),creado.getClave(),creado.getSaldo());
                     cout<<"Usuario creado, ingrese 1 para terminar o 2 para seguir usando el programa: ";cin>>term;
                     while (term<1 or term>2)
                     {
